@@ -1,4 +1,7 @@
   <div class="container my-4">
+    <div class="my-2 text-left">
+      <button class="btn btn-rounded btn-primary" type="button" [routerLink]="['/clientes/form']">Crear Cliente</button>
+    </div>
     <table class="table">
       <thead>
         <tr>
@@ -7,6 +10,7 @@
           <th scope="col">APELLIDO</th>
           <th scope="col">CORREO</th>
           <th scope="col">FECHA CREADO</th>
+          <th scope="col">ACCIONES</th>
         </tr>
       </thead>
       <tbody>
@@ -16,6 +20,9 @@
           <td>{{ cliente.apellido}}</td>
           <td>{{ cliente.email}}</td>
           <td>{{ cliente.createAt}}</td>
+          <td>
+            <button type="button" class="btn btn-primary" [routerLink]="['/clientes/form',cliente.id,]">editar</button>
+          </td>
         </tr>
       </tbody>
     </table>
